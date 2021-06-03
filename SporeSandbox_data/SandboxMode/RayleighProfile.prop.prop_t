@@ -1,0 +1,6 @@
+setf kRayleighScaleHeight 8000.0
+float atmosphereProfileWidth 0
+float atmosphereProfileExpTerm 1.0
+float atmosphereProfileExpScale -1.0/$kRayleighScaleHeight
+float atmosphereProfileLinearTerm 0
+float atmosphereProfileConstantTerm 0

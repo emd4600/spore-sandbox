@@ -1,0 +1,9 @@
+key parent models!DefaultTemplate.prop
+key modelMeshLOD0 SandboxModels!PbrTest.rw4
+
+string8s modelTexturesLOD0
+	"albedo"
+end
+keys modelTexturesLOD0Keys
+	Textures!rustediron2_basecolor.rw4
+end

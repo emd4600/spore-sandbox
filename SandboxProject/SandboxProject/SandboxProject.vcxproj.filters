@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="SandboxProject">
+      <UniqueIdentifier>{3880d018-2395-4502-abfe-4b83e0817aab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Internal">
+      <UniqueIdentifier>{d62ad12d-69d8-4933-8342-03043c9adc22}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="targetver.h">
+      <Filter>Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="SandboxMode.h">
+      <Filter>SandboxProject</Filter>
+    </ClInclude>
+    <ClInclude Include="FlatTerrain.h">
+      <Filter>SandboxProject</Filter>
+    </ClInclude>
+    <ClInclude Include="FlatTerrainDetours.h">
+      <Filter>SandboxProject</Filter>
+    </ClInclude>
+    <ClInclude Include="SandboxMode2.h">
+      <Filter>SandboxProject</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicallyBasedSky.h">
+      <Filter>SandboxProject</Filter>
+    </ClInclude>
+    <ClInclude Include="SphereCamera.h">
+      <Filter>SandboxProject</Filter>
+    </ClInclude>
+    <ClInclude Include="CreatureController.h">
+      <Filter>SandboxProject</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>SandboxProject</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Internal</Filter>
+    </ClCompile>
+    <ClCompile Include="SandboxMode.cpp">
+      <Filter>SandboxProject</Filter>
+    </ClCompile>
+    <ClCompile Include="FlatTerrain.cpp">
+      <Filter>SandboxProject</Filter>
+    </ClCompile>
+    <ClCompile Include="SandboxMode2.cpp">
+      <Filter>SandboxProject</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicallyBasedSky.cpp">
+      <Filter>SandboxProject</Filter>
+    </ClCompile>
+    <ClCompile Include="SphereCamera.cpp">
+      <Filter>SandboxProject</Filter>
+    </ClCompile>
+    <ClCompile Include="CreatureController.cpp">
+      <Filter>SandboxProject</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SdkPathConfig.props" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt">
+      <Filter>Internal</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,16 @@
+compiledState state
+	shaderID PrecomputeTransmittance
+
+	flags1 0x4
+
+	vertexDescription
+		element position D3DDECLTYPE_FLOAT3
+		element texcoord0 D3DDECLTYPE_FLOAT2
+	end
+
+	renderState D3DRS_ZENABLE D3DZB_FALSE
+	renderState D3DRS_ZWRITEENABLE FALSE
+	renderState D3DRS_CULLMODE D3DCULL_NONE
+end
+
+material PrecomputeTransmittance -states state

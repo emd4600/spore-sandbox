@@ -1,0 +1,5 @@
+float atmosphereProfileWidth 0
+float atmosphereProfileExpTerm 0
+float atmosphereProfileExpScale 0
+float atmosphereProfileLinearTerm -1.0/15000.0
+float atmosphereProfileConstantTerm 8.0/3.0

@@ -1,0 +1,6 @@
+setf kMieScaleHeight 1200.0
+float atmosphereProfileWidth 0
+float atmosphereProfileExpTerm 1.0
+float atmosphereProfileExpScale -1.0/$kMieScaleHeight
+float atmosphereProfileLinearTerm 0
+float atmosphereProfileConstantTerm 0

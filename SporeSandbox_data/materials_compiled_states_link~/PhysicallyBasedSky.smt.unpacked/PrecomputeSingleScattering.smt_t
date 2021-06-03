@@ -1,0 +1,23 @@
+compiledState state
+	shaderID PrecomputeSingleScattering
+
+	flags1 0x4
+
+	vertexDescription
+		element position D3DDECLTYPE_FLOAT3
+		element texcoord0 D3DDECLTYPE_FLOAT2
+	end
+
+	renderState D3DRS_ZENABLE D3DZB_FALSE
+	renderState D3DRS_ZWRITEENABLE FALSE
+	renderState D3DRS_CULLMODE D3DCULL_NONE
+
+	textureSlot 0
+		samplerState D3DSAMP_ADDRESSU D3DTADDRESS_CLAMP
+		samplerState D3DSAMP_ADDRESSV D3DTADDRESS_CLAMP
+		samplerState D3DSAMP_MAGFILTER D3DTEXF_LINEAR
+		samplerState D3DSAMP_MINFILTER D3DTEXF_LINEAR
+	end
+end
+
+material PrecomputeSingleScattering -states state

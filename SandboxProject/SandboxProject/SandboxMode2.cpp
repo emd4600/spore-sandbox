@@ -155,7 +155,8 @@ bool SandboxMode2::OnEnter()
 	mpAnimWorld->SetEffectWorld(mpEffectWorld.get());
 	mpAnimWorld->SetModelWorld(mpModelWorld.get());
 
-	mpLightingWorld->SetConfiguration(id("CreatureEditor"));
+	//TODO sub_7826A0 related with shadows? check end of Editor_Update
+	mpLightingWorld->SetConfiguration(id("SandboxMode"));
 	mpModelWorld->AddLightingWorld(mpLightingWorld.get(), 0, false);
 	mpModelWorld->SetVisible(true);
 
@@ -168,6 +169,8 @@ bool SandboxMode2::OnEnter()
 	mpPlaneModel = mpModelWorld->LoadModel(id("colorgrid_plane"), id("SandboxModels"));
 	mpModelWorld->UpdateModel(mpPlaneModel.get());
 	mpModelWorld->SetModelVisible(mpPlaneModel.get(), false);
+
+	mpTestBallModel = mpModelWorld->LoadModel(id("PbrTest"), id("SandboxModels"));
 
 	mpCreature = mpAnimWorld->LoadCreature({ 0x67cd060, TypeIDs::crt, GroupIDs::CreatureModels });
 	mpModelWorld->UpdateModel(mpCreature->GetModel());

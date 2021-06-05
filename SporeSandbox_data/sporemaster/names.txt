@@ -1,3 +1,4 @@
+names
 auto_SandboxMode_OzoneProfileBottom
 PbrTest
 models
@@ -13,6 +14,7 @@ TestShader
 PShader
 SkyRaytrace
 OzoneProfileTop
+StandardPbrShader
 PbrS
 materials_compiled_states_link~	0x40212000
 PbrSha
@@ -36,5 +38,7 @@ SandboxModels
 auto_SandboxMode_MieProfile
 PhysicallyBasedRendering
 DefaultTemplate
+PhysicallyBasedRendering.smt.unpacked
 PhysicallyBasedSky
 Textures
+sporemaster

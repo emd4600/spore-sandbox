@@ -129,4 +129,6 @@ protected:
 
 	RenderWare::Raster* mpTransmittanceLUT;
 	RenderWare::Raster* mpSingleScatteringLUT;
+
+	//TODO eventually, change ambient light in lighting world
 };

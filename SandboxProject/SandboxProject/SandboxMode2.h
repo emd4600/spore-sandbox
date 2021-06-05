@@ -54,6 +54,7 @@ protected:
 	intrusive_ptr<CreatureController> mpCreatureController;
 
 	ModelPtr mpPlaneModel;
+	ModelPtr mpTestBallModel;
 
 	IEffectPtr mpMovementCursorEffect;
 };

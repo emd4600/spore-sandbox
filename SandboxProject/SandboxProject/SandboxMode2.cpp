@@ -17,6 +17,8 @@ SandboxMode2::SandboxMode2()
 	, sunZenith(1.3f)
 	, sunAzimuth(2.9f)
 	, mpMovementCursorEffect()
+	, mpTerrainSystem()
+	, mpTestPlane()
 {
 	Initialize(nullptr);
 }
@@ -172,6 +174,8 @@ bool SandboxMode2::OnEnter()
 
 	mpTestBallModel = mpModelWorld->LoadModel(id("PbrTest"), id("SandboxModels"));
 
+	//mpTestPlane = mpModelWorld->LoadModel(id("test_pbr_plane"), id("SandboxModels"));
+
 	mpCreature = mpAnimWorld->LoadCreature({ 0x67cd060, TypeIDs::crt, GroupIDs::CreatureModels });
 	mpModelWorld->UpdateModel(mpCreature->GetModel());
 	mpModelWorld->SetModelVisible(mpCreature->GetModel(), true);
@@ -188,7 +192,26 @@ bool SandboxMode2::OnEnter()
 	mpPBSky->SetSun(sunZenith, sunAzimuth);
 	RenderManager.AddRenderable(mpPBSky.get(), 4);
 
+	UpdateSunPosition();
+
+	mpTerrainSystem = new SbTerrainSystem();
+	mpTerrainSystem->Generate();
+	mpTerrainSystem->SetLightingWorld(mpLightingWorld.get());
+	RenderManager.AddRenderable(mpTerrainSystem.get(), 5);
+
 	return true;
+}
+
+void SandboxMode2::UpdateSunPosition() {
+	mpPBSky->SetSun(sunZenith, sunAzimuth);
+
+	Vector3 sunDirection = -Vector3(
+		cosf(sunAzimuth) * sinf(sunZenith),
+		sinf(sunAzimuth) * sinf(sunZenith),
+		cosf(sunZenith)
+	);
+
+	mpLightingWorld->SetWorldTransform(Transform().SetRotation(Quaternion::GetRotationTo(Y_AXIS, sunDirection)));
 }
 
 void SandboxMode2::OnExit()
@@ -282,6 +305,7 @@ bool SandboxMode2::OnMouseUp(MouseButton mouseButton, float mouseX, float mouseY
 	return false;
 }
 
+
 // Called when the mouse is moved.
 bool SandboxMode2::OnMouseMove(float mouseX, float mouseY, MouseState mouseState)
 {
@@ -292,15 +316,7 @@ bool SandboxMode2::OnMouseMove(float mouseX, float mouseY, MouseState mouseState
 		sunZenith = max(0.0f, min(Math::PI, sunZenith));
 		sunAzimuth += (mInput.mousePosition.x - mouseX) / kScale;
 
-		mpPBSky->SetSun(sunZenith, sunAzimuth);
-
-		Vector3 sunDirection = -Vector3(
-			cosf(sunAzimuth) * sinf(sunZenith),
-			sinf(sunAzimuth) * sinf(sunZenith),
-			cosf(sunZenith)
-		);
-
-		mpLightingWorld->func28h(Transform().SetRotation(Quaternion::GetRotationTo(Y_AXIS, sunDirection)));
+		UpdateSunPosition();
 	}
 
 	mInput.OnMouseMove(mouseX, mouseY, mouseState);
@@ -373,7 +389,7 @@ void SandboxMode2::PlayAnimation(uint32_t animID, bool loop, int mode)
 
 	if (animID == 0x4485A08)
 	{
-		int* p = STATIC_CALL(Address(0x9FF670), int*, Args(int, Anim::AnimIndex), Args(mpCreature->field_184, mpCreature->field_18C));
+		int* p = STATIC_CALL(Address(ModAPI::ChooseAddress(0x9FF670, 0x9FF630)), int*, Args(int, Anim::AnimIndex), Args(mpCreature->field_184, mpCreature->field_18C));
 		if (!p || p[0xD8 / 4]) {
 			auto animIndex = mpCreature->LoadAnimation(animID);
 			mpCreature->SetAnimationMode(animIndex, mode);
@@ -382,7 +398,7 @@ void SandboxMode2::PlayAnimation(uint32_t animID, bool loop, int mode)
 
 		}
 		if (p && p[0xD8 / 4]) {
-			CALL(Address(0xA00F10), void, Args(int, int*, int), Args(mpCreature->field_184, p, 0));
+			CALL(Address(ModAPI::ChooseAddress(0xA00F10, 0xA00ED0)), void, Args(int, int*, int), Args(mpCreature->field_184, p, 0));
 		}
 
 		if (loop)

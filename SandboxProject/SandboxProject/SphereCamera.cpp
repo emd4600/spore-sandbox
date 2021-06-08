@@ -73,6 +73,13 @@ void SphereCamera::Update(int deltaTime, App::cViewer* pViewer)
 		mLongitude = fmodf(mLongitude, PI * 2.0f);
 	}
 
+	if (mInput.IsKeyDown(VK_OEM_MINUS)) {
+		mDistance += deltaTime * 2.0f / 1000.0f;
+	}
+	if (mInput.IsKeyDown(VK_OEM_PLUS)) {
+		mDistance -= deltaTime * 2.0f / 1000.0f;
+	}
+
 	// Spherical coordinates
 	float colatitude = Math::PI / 2.0f - mLatitude;
 	Vector3 position = {

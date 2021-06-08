@@ -4,6 +4,7 @@
 #include "CreatureController.h"
 #include "SphereCamera.h"
 #include "PhysicallyBasedSky.h"
+#include "SbTerrainSystem.h"
 
 #define SandboxMode2Ptr intrusive_ptr<SandboxMode2>
 
@@ -38,6 +39,7 @@ public:
 protected:
 	void WalkTo(const Vector3& position);
 	void PlayAnimation(uint32_t animID, bool loop, int mode);
+	void UpdateSunPosition();
 
 	GameInput mInput;
 	SphereCamera* mpCamera;
@@ -46,6 +48,8 @@ protected:
 	float sunZenith;
 	float sunAzimuth;
 
+	SbTerrainSystemPtr mpTerrainSystem;
+
 	IModelWorldPtr mpModelWorld;
 	IEffectWorldPtr mpEffectWorld;
 	ILightingWorldPtr mpLightingWorld;
@@ -53,6 +57,7 @@ protected:
 	AnimatedCreaturePtr mpCreature;
 	intrusive_ptr<CreatureController> mpCreatureController;
 
+	ModelPtr mpTestPlane;
 	ModelPtr mpPlaneModel;
 	ModelPtr mpTestBallModel;
 

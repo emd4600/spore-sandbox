@@ -1,6 +1,6 @@
 struct cVertOut {
 	float4 position : POSITION;
-	float4 worldPosition : POSITION2;
+	float4 worldPosition : TEXCOORD1;
 	float3 normal : NORMAL;
 	float3 tangent : TANGENT;
 	float2 texcoord : TEXCOORD;
@@ -134,6 +134,7 @@ float4 main(cVertOut In) : COLOR
 	//color = (N + 1.0) / 2.0;
 	//color = In.normal;
 	return float4(color, 1.0);
+	//return float4(1.0, 0.0, 0.0, 1.0);
 	//return float4(normalize(dirLightsWorld[0].dir.xyz), 1.0);
 	//return float4(sin(time), In.texcoord.x, In.texcoord.y, 1.0);
 }

@@ -11,6 +11,12 @@
     <Filter Include="Internal">
       <UniqueIdentifier>{d62ad12d-69d8-4933-8342-03043c9adc22}</UniqueIdentifier>
     </Filter>
+    <Filter Include="SandboxProject\Terrain">
+      <UniqueIdentifier>{85811749-bad9-4c6f-8b2d-d6dac36c81fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SandboxProject\Graphics">
+      <UniqueIdentifier>{490ef044-5977-4f5e-991f-c30815f7d941}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -31,14 +37,23 @@
     <ClInclude Include="SandboxMode2.h">
       <Filter>SandboxProject</Filter>
     </ClInclude>
-    <ClInclude Include="PhysicallyBasedSky.h">
-      <Filter>SandboxProject</Filter>
-    </ClInclude>
     <ClInclude Include="SphereCamera.h">
       <Filter>SandboxProject</Filter>
     </ClInclude>
     <ClInclude Include="CreatureController.h">
       <Filter>SandboxProject</Filter>
+    </ClInclude>
+    <ClInclude Include="SbTerrainChunk.h">
+      <Filter>SandboxProject\Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="SbTerrainSystem.h">
+      <Filter>SandboxProject\Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicallyBasedSky.h">
+      <Filter>SandboxProject\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="PbrTextures.h">
+      <Filter>SandboxProject\Graphics</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -57,14 +72,23 @@
     <ClCompile Include="SandboxMode2.cpp">
       <Filter>SandboxProject</Filter>
     </ClCompile>
-    <ClCompile Include="PhysicallyBasedSky.cpp">
-      <Filter>SandboxProject</Filter>
-    </ClCompile>
     <ClCompile Include="SphereCamera.cpp">
       <Filter>SandboxProject</Filter>
     </ClCompile>
     <ClCompile Include="CreatureController.cpp">
       <Filter>SandboxProject</Filter>
+    </ClCompile>
+    <ClCompile Include="SbTerrainChunk.cpp">
+      <Filter>SandboxProject\Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="SbTerrainSystem.cpp">
+      <Filter>SandboxProject\Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicallyBasedSky.cpp">
+      <Filter>SandboxProject\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="PbrTextures.cpp">
+      <Filter>SandboxProject\Graphics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -7,7 +7,8 @@ struct cVertIn {
 
 struct cVertOut {
 	float4 position : POSITION;
-	float4 worldPosition : POSITION2;
+	// using POSITION2 bugs PIX, so we will use texcoord instead
+	float4 worldPosition : TEXCOORD1;
 	float3 normal : NORMAL;
 	float3 tangent : TANGENT;
 	float2 texcoord : TEXCOORD;
@@ -22,7 +23,8 @@ cVertOut main(cVertIn In) {
 	float3 normal = In.normal * 1.0/127.0 - 1;
 	float3 tangent = In.tangent * 1.0/127.0 - 1;
 
-	Out.position = mul(float4(In.position, 1.0), modelToClip);	
+	Out.position = mul(float4(In.position, 1.0), modelToClip);
+	//Out.worldPosition = mul(float4(In.position, 1.0), modelToClip);
 	Out.worldPosition = mul(float4(In.position, 1.0), modelToWorld);
 	Out.normal = mul(float4(normal, 0.0), modelToWorld);
 	Out.tangent = mul(float4(tangent, 0.0), modelToWorld);

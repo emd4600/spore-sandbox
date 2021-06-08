@@ -107,6 +107,7 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="FlatTerrainDetours.h" />
+    <ClInclude Include="PbrTextures.h" />
     <ClInclude Include="PhysicallyBasedSky.h">
       <SubType>
       </SubType>
@@ -116,6 +117,14 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="SandboxMode2.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="SbTerrainChunk.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="SbTerrainSystem.h">
       <SubType>
       </SubType>
     </ClInclude>
@@ -140,6 +149,7 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="PbrTextures.cpp" />
     <ClCompile Include="PhysicallyBasedSky.cpp">
       <SubType>
       </SubType>
@@ -149,6 +159,14 @@
       </SubType>
     </ClCompile>
     <ClCompile Include="SandboxMode2.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="SbTerrainChunk.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="SbTerrainSystem.cpp">
       <SubType>
       </SubType>
     </ClCompile>

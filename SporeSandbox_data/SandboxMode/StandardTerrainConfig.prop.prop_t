@@ -1,0 +1,11 @@
+float sbTerrainChunkSize 30.0
+int32 sbTerrainChunkResolution 32
+float sbTerrainUVScale 3.0
+uint32 sbTerrainMaterial hash(Pbr1Texture)
+
+keys sbTerrainTextures1
+	Textures!rocks_ground_02_albedo.rw4
+	Textures!rocks_ground_02_normal.rw4
+	Textures!alpha_0.rw4  # Textures!rocks_ground_02_albedo.rw4 #Textures!alpha_0.rw4
+	Textures!rocks_ground_02_ao.rw4  # Textures!rocks_ground_02_albedo.rw4 #Textures!rocks_ground_02_ao.rw4
+end

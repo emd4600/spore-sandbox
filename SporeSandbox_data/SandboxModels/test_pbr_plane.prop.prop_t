@@ -1,0 +1,15 @@
+key parent models!DefaultTemplate.prop
+key modelMeshLOD0 SandboxModels!test_pbr_plane.rw4
+
+#<string8s modelTexturesLOD0
+	"albedo"
+	"normal"
+	"metallic"
+	"ao"
+end
+keys modelTexturesLOD0Keys
+	Textures!rocks_ground_02_albedo.rw4
+	Textures!rocks_ground_02_normal.rw4
+	Textures!alpha_1.rw4
+	Textures!rocks_ground_02_ao.rw4
+end#>

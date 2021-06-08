@@ -1,64 +1,17 @@
 bool cameraSpaceLighting false
 float exposure 0.35
-
-colorRGB lightSunColor (8*1, 8*0.96, 8*0.95)
-vector3 lightSunDir (0, -1, 0)
-float lightSunStrength 1
-
 colorRGB lightFill1Color (0.84, 0.93, 1)
 vector3 lightFill1Dir (1, -0.75, -0.75)
-float lightFill1Strength 0
+float lightFill1Strength 0.4
 colorRGB lightFill2Color (0.84, 0.93, 1)
 vector3 lightFill2Dir (-1, 0.5, -0.75)
-float lightFill2Strength 0
+float lightFill2Strength 0.4
 colorRGB lightSkyColor (1, 0.96, 0.95)
 vector3 lightSkyDir (0.5, 1, 0.75)
-float lightSkyStrength 0
-
-#<
+float lightSkyStrength 0.4
 colorRGB lightSunColor (1, 0.96, 0.95)
-vector3 lightSunDir (0, 0, -1)
+vector3 lightSunDir (-0.2, -0.2, 1)
 float lightSunStrength 1
-
-# We won't use these ones for now
-colorRGB lightSkyColor (1, 0.96, 0.95)
-vector3 lightSkyDir (0.5, 1, 0.75)
-float lightSkyStrength 0
-colorRGB lightFill1Color (0.84, 0.93, 1)
-vector3 lightFill1Dir (1, -0.75, -0.75)
-float lightFill1Strength 0
-colorRGB lightFill2Color (0.84, 0.93, 1)
-vector3 lightFill2Dir (-1, 0.5, -0.75)
-float lightFill2Strength 0#>
-
-vector2 shadowCameraRange (5, 12)
-floats shadowCasterDistance
-	10
-end
-floats shadowDepthRange
-	4
-	4
-	6
-	6
-	6
-	6
-	6
-end
-floats shadowScaleCurve
-	20
-	20
-	40
-	40
-	40
-	40
-	40
-end
-floats shadowStrengthCurve
-	0.3
-end
-
-# Spherical harmonics (some kind of baked lights?), I don't think we will use them
-
 vector4s shAreaLights
 	(1, 0.96, 0.95, 1)
 	(-0.2, -0.2, 1, 0.65)
@@ -105,3 +58,28 @@ vector3s shHemiLight
 end
 colorRGB shHemiLightScale (0.3, 0.3, 0.3)
 vector3 shHemiLightZRM (0, 0, 0)
+vector2 shadowCameraRange (5, 12)
+floats shadowCasterDistance
+	10
+end
+floats shadowDepthRange
+	4
+	4
+	6
+	6
+	6
+	6
+	6
+end
+floats shadowScaleCurve
+	20
+	20
+	40
+	40
+	40
+	40
+	40
+end
+floats shadowStrengthCurve
+	0.3
+end

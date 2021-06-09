@@ -56,7 +56,7 @@ void PhysicallyBasedSky::Render(int flags, int layerIndex, App::cViewer** pViewe
 	}
 
 	mShaderParams.exposure = 10;
-	mShaderParams.cameraPos = {0, 0, 0};
+	mShaderParams.cameraPos = {0, 0, 1};
 	//mShaderParams.sunDirection = Vector3(0, 1.0, 2.0).Normalized();
 	mShaderParams.earthCenter = { 0, 0, -mShaderParams.atmosphere.bottomRadius };
 

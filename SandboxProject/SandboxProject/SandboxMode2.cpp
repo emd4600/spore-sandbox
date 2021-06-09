@@ -168,9 +168,9 @@ bool SandboxMode2::OnEnter()
 	CameraManager.SetActiveCameraByID(SphereCamera::ID);
 	mpCamera = (SphereCamera*)CameraManager.GetActiveCamera();
 
-	mpPlaneModel = mpModelWorld->LoadModel(id("colorgrid_plane"), id("SandboxModels"));
+	/*mpPlaneModel = mpModelWorld->LoadModel(id("colorgrid_plane"), id("SandboxModels"));
 	mpModelWorld->UpdateModel(mpPlaneModel.get());
-	mpModelWorld->SetModelVisible(mpPlaneModel.get(), false);
+	mpModelWorld->SetModelVisible(mpPlaneModel.get(), false);*/
 
 	mpTestBallModel = mpModelWorld->LoadModel(id("PbrTest"), id("SandboxModels"));
 

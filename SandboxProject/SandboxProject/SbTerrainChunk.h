@@ -31,6 +31,7 @@ private:
 
 	SbTerrainSystem* mpTerrain;
 	GeneratedMeshPtr(Vertex) mMesh;
+	Matrix4 mTransform;
 	int mTileX;
 	int mTileY;
 };

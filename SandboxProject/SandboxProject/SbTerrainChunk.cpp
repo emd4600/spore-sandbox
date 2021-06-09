@@ -42,6 +42,8 @@ void SbTerrainChunk::Generate() {
 	const float spacing = size / float(resolution);
 	const int rowVerts = resolution + 1;
 
+	mTransform = Transform().SetOffset(mTileX * size, mTileY * size, 0.0f).ToMatrix4();
+
 	//TODO generate using triangle strips, more efficient
 	mMesh = new Graphics::GeneratedMesh<Vertex>(rowVerts*rowVerts, resolution*resolution*2);
 
@@ -119,5 +121,6 @@ void SbTerrainChunk::Generate() {
 void SbTerrainChunk::Render() {
 	auto material = mMesh->GetMaterial(0);
 	mpTerrain->baseTextures.PrepareMaterial(material);
+	material->states[0]->SetTransform(mTransform);
 	mMesh->Render();
 }

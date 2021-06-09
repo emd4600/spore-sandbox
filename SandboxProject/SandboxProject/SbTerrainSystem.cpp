@@ -60,10 +60,12 @@ void SbTerrainSystem::SetLightingWorld(Graphics::ILightingWorld* world) {
 void SbTerrainSystem::Generate() {
 	//TODO
 
-	for (int i = 0; i < 1; ++i) {
-		SbTerrainChunkPtr chunk = new SbTerrainChunk(this, 0, i);
-		chunk->Generate();
-		mChunks.push_back(chunk);
+	for (int i = -5; i <= 5; ++i) {
+		for (int j = -5; j <= 5; ++j) {
+			SbTerrainChunkPtr chunk = new SbTerrainChunk(this, i, j);
+			chunk->Generate();
+			mChunks.push_back(chunk);
+		}
 	}
 }
 
